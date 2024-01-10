@@ -14,7 +14,7 @@ public class Decoding  {
     public static String nonCleanList;
     public static int number;
 
-    public Decoding() {
+    public Decoding()  {
 
         //Вызываем алфавит
         alphabet = Alphabet.GetAlphabet();
@@ -31,7 +31,8 @@ public class Decoding  {
             char currentChar = nonCleanList.toLowerCase().charAt(i);
             int charIndex = Arrays.binarySearch(alphabet,currentChar);
             if (charIndex < 0) {
-                decodingText[i] = currentChar;;
+                decodingText[i] = currentChar;
+                System.out.println("Символ " + decodingText[i] + " не найден в алфавите и не будет расшифрован.");
             }
 
             else {
@@ -44,6 +45,14 @@ public class Decoding  {
         System.out.println(RESULT);
     }
 }
+
+
+
+
+
+
+
+
 
 
 //decodingText[i] = (char) (charIndex - number < 0 ? Math.abs(alphabet.length + (charIndex - number)) : (charIndex - number) % alphabet.length);

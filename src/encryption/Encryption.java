@@ -14,7 +14,7 @@ public class Encryption  {
     public static String cleanList;
     public static int number;
 
-    public Encryption() {
+    public Encryption()  {
         //Вызываем алфавит
         alphabet = Alphabet.GetAlphabet();
 
@@ -31,6 +31,7 @@ public class Encryption  {
         int charIndex = Arrays.binarySearch(alphabet,currentChar);
         if (charIndex < 0) {
         encryptionText[i] = currentChar;
+        System.out.println("Символ " + encryptionText[i] + " не найден в алфавите и не будет зашифрован.");
         }
         else {
         encryptionText[i] = alphabet[(charIndex + number) % alphabet.length];

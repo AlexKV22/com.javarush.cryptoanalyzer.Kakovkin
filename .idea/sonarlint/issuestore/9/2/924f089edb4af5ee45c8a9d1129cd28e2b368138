@@ -7,4 +7,8 @@ B
 java:S2129
 " Remove this "String" constructor(é–‡Øüÿÿÿÿ8…¡–Ï1
 G	java:S106"+Replace this use of System.out by a logger.(î”–Œ8ƒ…¡–Ï1
+K
+java:S2440"".Remove this instantiation of "HackBruteForce".(‘ë×ê8»¾™©Ï1
+R
+java:S2209#"5Change this instance-reference to a static reference.(Ê¼·¶8¼¾™©Ï1
 L	java:S106'"+Replace this use of System.out by a logger.(¢ØÒåúÿÿÿÿ8……¡–Ï1

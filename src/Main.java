@@ -9,7 +9,7 @@ public class Main {
     private static final String START_PROGRAM = new String("Выберите цифру функции программы:\n 1 - Шифрование.\n 2 - Дешифрование. \n 3 - Взлом с помощью Brute Force.");
     private static final String ERROR_MESSAGE = new String("Ошибка. Введите корректное число");
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         Scanner console = new Scanner(System.in);
 
         // Начало программы и проверка на ввод числа

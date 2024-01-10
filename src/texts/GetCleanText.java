@@ -11,11 +11,10 @@ public class GetCleanText {
 
     public static String getCleanText()  {
         Scanner scanner = new Scanner(System.in);
-        System.out.println(ASKING_FILE);                //Запрашиваем путь файла
-        Path path = Path.of(scanner.nextLine());       // Получаем путь из консоли
+        System.out.println(ASKING_FILE);
+        Path path = Path.of(scanner.nextLine());
         try {
-            if (Files.notExists(path)) {                //Проверка на наличие, если файл не содержится, сообщение об ошибке,
-                                                        // при введении неправильного пути срабатывает ошибка, но константа ERROR не показывается, ПОЧЕМУ??
+            if (Files.notExists(path)) {                //Проверка на наличие, если файл не содержится, сообщение об ошибке, при введении неправильного пути срабатывает ошибка, но константа ERROR не показывается, ПОЧЕМУ??
             }
         }
         catch (Exception e) {
@@ -24,11 +23,11 @@ public class GetCleanText {
 
         String cleanText;
         try {
-            List<String> cleanText1 = Files.readAllLines(path);    //Скидываем текст файла в список
-            cleanText = String.join("\n", cleanText1);     // Объединяем элементы в строку
+            List<String> cleanText1 = Files.readAllLines(path);
+            cleanText = String.join("\n", cleanText1);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return cleanText;                           // Возвращаем строку исходного текста для шифрования
+        return cleanText;
     }
 }

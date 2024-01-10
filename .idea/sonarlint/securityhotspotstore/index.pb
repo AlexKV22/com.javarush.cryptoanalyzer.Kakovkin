@@ -62,3 +62,7 @@ J
 src/decoding/Decoding.java,5\a\5a1461ceea2712b3a964cf0e289502d94c41ed94
 V
 &src/hackBruteForce/HackBruteForce.java,2\6\26623a399d7a5a05f8b1d94ce5b6176818498777
+=
+src/ClearText,9\c\9c6c0e9a8d655ed5a38af6bf41c75e9320725d8e
+;
+src/encrypt,5\e\5ee3322d55c77e7ad750615a8114504d17d959f8
