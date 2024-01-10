@@ -1,7 +1,7 @@
 
-import Decoding.Decoding;
-import Encryption.Encryption;
-import HackBruteForce.HackBruteForce;
+import decoding.Decoding;
+import encryption.Encryption;
+import hackBruteForce.HackBruteForce;
 
 import java.util.Scanner;
 

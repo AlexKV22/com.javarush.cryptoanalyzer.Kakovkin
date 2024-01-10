@@ -1,9 +1,9 @@
-package Decoding;
+package decoding;
 
-import Alphabet.Alphabet;
-import Texts.GetEncryptionText;
-import Texts.GetKey;
-import Texts.GetResultText;
+import alphabet.Alphabet;
+import texts.GetEncryptionText;
+import texts.GetKey;
+import texts.GetResultText;
 
 import java.util.Arrays;
 
@@ -26,21 +26,25 @@ public class Decoding  {
 
     public void decoding() {
 
-        char[] decodingText = new char[nonCleanList.length()];        // Все то же самое, что и в процессе шифрования, только для дешифровки мы не плюсуем, а вычитаем ключ
+        char[] decodingText = new char[nonCleanList.length()];
         for (int i = 0; i < nonCleanList.length(); i++) {
-            char currentChar = nonCleanList.charAt(i);
-            int charindex = Arrays.binarySearch(alphabet,currentChar);
-            if (charindex < 0) {
-                decodingText[i] = currentChar;
+            char currentChar = nonCleanList.toLowerCase().charAt(i);
+            int charIndex = Arrays.binarySearch(alphabet,currentChar);
+            if (charIndex < 0) {
+                decodingText[i] = currentChar;;
             }
+
             else {
-                decodingText[i] = alphabet[(charindex - number) % alphabet.length];
+                decodingText[i] = alphabet[(charIndex - number + alphabet.length) % alphabet.length];
             }
         }
         String result = new String(decodingText);
 
-        //Вызывваем метод записи результата
         GetResultText.getResultText(result);
         System.out.println(RESULT);
     }
 }
+
+
+//decodingText[i] = (char) (charIndex - number < 0 ? Math.abs(alphabet.length + (charIndex - number)) : (charIndex - number) % alphabet.length);
+//                decodingText[i] = alphabet[(charIndex - number) % alphabet.length];

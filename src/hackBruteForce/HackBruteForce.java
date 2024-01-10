@@ -1,9 +1,9 @@
-package HackBruteForce;
+package hackBruteForce;
 
-import Alphabet.Alphabet;
-import Texts.GetCleanText;
-import Texts.GetEncryptionText;
-import Texts.GetResultText;
+import alphabet.Alphabet;
+import texts.GetCleanText;
+import texts.GetEncryptionText;
+import texts.GetResultText;
 
 import java.util.Arrays;
 import java.util.List;
@@ -56,7 +56,7 @@ public class HackBruteForce {
         }
 
         for (String result : plainText) {
-            if (result.equalsIgnoreCase(HackBruteForce.cleanList)) {
+            if (result.equalsIgnoreCase(cleanList)) {
                 GetResultText.getResultText(result);
                 System.out.println(RESULT);
             }
