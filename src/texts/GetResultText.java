@@ -10,18 +10,18 @@ public class GetResultText {
     private static final String ERROR = new String("Ошибка. Файл не найден.");
     public static void getResultText(String result) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println(ASKING_FILE);            //Запрашиваем путь к файлу для записи результата
-        Path path = Path.of(scanner.nextLine());    //Получаем путь из консоли
-        try{                                           //Проверка на наличие, если файл не содержится, сообщение об ошибке,
-            if (Files.notExists(path)) {                // при введении неправильного пути срабатывает ошибка, но константа ERROR не показывается, ПОЧЕМУ??
+        System.out.println(ASKING_FILE);
+        Path path = Path.of(scanner.nextLine());
+        try{
+            if (Files.notExists(path)) {
             }
         }
         catch (Exception e) {
-            System.out.println(ERROR);
+            throw new RuntimeException(ERROR);
         }
 
         try {
-            Files.writeString(path, result);            //Производим запись в файл
+            Files.writeString(path, result);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -16,8 +16,12 @@ public class GetKey {
             System.out.println(ERROR);
         }
         int number = console.nextInt();
-        if (number < 0 && number > Alphabet.GetAlphabet().length - 1) {
-            System.out.println(ERROR);
+        try {
+            if (number < 0 && number > Alphabet.GetAlphabet().length - 1) {
+            }
+        }
+        catch (Exception e) {
+            throw new RuntimeException(ERROR);
         }
         return number;
     }

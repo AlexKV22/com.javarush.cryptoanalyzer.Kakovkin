@@ -12,25 +12,25 @@ public class GetEncryptionText {
 
     public static String getEncryptionText() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println(ASKING_FILE);                //Запрашиваем путь к файлу с зашифрованным текстом
-        Path path = Path.of(scanner.nextLine());        // Получаем путь из консоли
+        System.out.println(ASKING_FILE);
+        Path path = Path.of(scanner.nextLine());
         try {
             if (Files.notExists(path)) {
-            }                                           //Проверка на наличие, если файл не содержится, сообщение об ошибке,
-        }                                               //при введении неправильного пути срабатывает ошибка, но константа ERROR не показывается, ПОЧЕМУ??
+            }
+        }
         catch (Exception e) {
-            System.out.println(ERROR);
+            throw new RuntimeException(ERROR);
         }
 
         String nonСleanText;
         try {
-            List < String > nonСleanText1 = Files.readAllLines(path);       //Скидываем текст в список
-            nonСleanText = String.join("\n", nonСleanText1);        // Объединяем элементы в строку
+            List < String > nonСleanText1 = Files.readAllLines(path);
+            nonСleanText = String.join("\n", nonСleanText1);
         }
             catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return nonСleanText;                                               //Возвращаем строку исходного текста для расшифровки
+        return nonСleanText;
     }
 }
 

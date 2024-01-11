@@ -14,11 +14,11 @@ public class GetCleanText {
         System.out.println(ASKING_FILE);
         Path path = Path.of(scanner.nextLine());
         try {
-            if (Files.notExists(path)) {                //Проверка на наличие, если файл не содержится, сообщение об ошибке, при введении неправильного пути срабатывает ошибка, но константа ERROR не показывается, ПОЧЕМУ??
+            if (Files.notExists(path)) {
             }
         }
         catch (Exception e) {
-            System.out.println(ERROR);
+            throw new RuntimeException(ERROR);
         }
 
         String cleanText;

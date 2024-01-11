@@ -1,14 +1,11 @@
 
 7
-java:S1220""Move this file to a named package.8ø„¡–Ï1
+java:S1220""Move this file to a named package.8Ä¨ÈÓÏ1
 =
-java:S2129	" Remove this "String" constructor(ÛÌ‘æ8€…¡–Ï1
+java:S2129	" Remove this "String" constructor(ÛÌ‘æ8Ê¨ÈÓÏ1
 B
 java:S2129
-" Remove this "String" constructor(é–‡Øüÿÿÿÿ8…¡–Ï1
-G	java:S106"+Replace this use of System.out by a logger.(î”–Œ8ƒ…¡–Ï1
-K
-java:S2440"".Remove this instantiation of "HackBruteForce".(‘ë×ê8»¾™©Ï1
-R
-java:S2209#"5Change this instance-reference to a static reference.(Ê¼·¶8¼¾™©Ï1
-L	java:S106'"+Replace this use of System.out by a logger.(¢ØÒåúÿÿÿÿ8……¡–Ï1
+" Remove this "String" constructor(é–‡Øüÿÿÿÿ8Ë¨ÈÓÏ1
+G	java:S106"+Replace this use of System.out by a logger.(î”–Œ8Í¨ÈÓÏ1
+X	java:S125$"<This block of commented-out lines of code should be removed.(ª¼êî8Î¨ÈÓÏ1
+L	java:S106)"+Replace this use of System.out by a logger.(¢ØÒåúÿÿÿÿ8Î¨ÈÓÏ1

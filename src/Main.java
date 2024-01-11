@@ -1,7 +1,7 @@
 
 import decoding.Decoding;
 import encryption.Encryption;
-import hackBruteForce.HackBruteForce;
+import hackCaesarCipher.HackCaesarCipher;
 
 import java.util.Scanner;
 
@@ -31,14 +31,16 @@ public class Main {
 
         else if (numberChoice == 3) {
             //Вызываем метод взлома с помощью БрутФорс
-            HackBruteForce hackBruteForce = new HackBruteForce();
-            hackBruteForce.hackBruteForce();
+            HackCaesarCipher hackCaesarCipher = new HackCaesarCipher();
+            hackCaesarCipher.hackcaesarCipher();
+//            HackBruteForce hackBruteForce = new HackBruteForce();
+//            hackBruteForce.hackBruteForce();
         }
 
         else {
             System.out.println(ERROR_MESSAGE);
         }
-
+        Main.main(args);
     }
 
 }

@@ -47,7 +47,7 @@ public class HackBruteForce {
             cleanList1 = new char[message.length];
             for (int i = 0; i < message.length; i++) {
                 if (message[i] != ' ') {
-                    cleanList1[i] = alphabet[(alphabetList.indexOf(message[i]) + key) % alphabet.length];
+                    cleanList1[i] = alphabet[(alphabetList.indexOf(message[i]) - key + alphabet.length) % alphabet.length];
                 } else {
                     cleanList1[i] = ' ';
                 }
