@@ -52,14 +52,6 @@ J
 src/decoding/Decoding.java,5\a\5a1461ceea2712b3a964cf0e289502d94c41ed94
 V
 &src/hackBruteForce/HackBruteForce.java,2\6\26623a399d7a5a05f8b1d94ce5b6176818498777
-=
-src/CleanText,f\2\f231734c7ba32e03dea332f980d40ff9b50e575c
-;
-src/Decoded,4\e\4ef3f114d1b9663b79c2218059ca259745415ed6
-=
-src/Encrypted,7\4\74d926e824a35b011b8798b4b773069f542714be
-I
-src/HackCaesarCipher.java,d\6\d6aee7cdbd8152e3b233d452eefb3ecd033ff2c4
 D
 src/hackCaesarCipher,d\2\d284a906caa136e9c37a1db8206e84f1795c2775
 Z
