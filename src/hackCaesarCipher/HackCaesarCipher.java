@@ -1,45 +1,59 @@
 package hackCaesarCipher;
+import constants.Constans;
+import interfaces.ReadableInterface;
+import interfaces.WriteableInterface;
 
-import alphabet.Alphabet;
-import texts.GetCleanText;
-import texts.GetEncryptionText;
-import texts.GetKey;
-import texts.GetResultText;
-
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
+import java.util.Scanner;
 
-public class HackCaesarCipher {
-    private static final String RESULT = new String("Готово. Проверьте файл.");
-    public static char[] alphabet;
-    public static String nonCleanList;
-    public static String cleanList;
+public class HackCaesarCipher implements interfaces.Alphabet, ReadableInterface, WriteableInterface {
+    private char[] alphabet;
+    private String codeText;
+    private String result;
+    private Path path;
 
     public HackCaesarCipher() {
-        //Вызываем алфавит
-        alphabet = Alphabet.GetAlphabet();
-        //Вызываем метод запроса исходного зашифрованного файла для шифрования
-        nonCleanList = GetEncryptionText.getEncryptionText();
-        //Вызываем метод запроса текста из исходного файла для шифрования
-        cleanList = GetCleanText.getCleanText();
+        alphabet = getAlphabet();
+        codeText = getText();
     }
 
-    public void hackcaesarCipher() {
-        char[] decodingText = new char[nonCleanList.length()];
-        for (int shift = 0; shift < alphabet.length; shift++) {
-            for (int i = 0; i < nonCleanList.length(); i++) {
-                char currentChar = nonCleanList.toLowerCase().charAt(i);
+    public void hackCaesarCipher() {
+        path = getPathOfWriteResult();
+        char[] decodingText = new char[codeText.length()];
+        for (int i = 0; i < alphabet.length; i++) {
+            for (int j = 0; j < codeText.length(); j++) {
+                char currentChar = codeText.toLowerCase().charAt(j);
                 int charIndex = Arrays.binarySearch(alphabet, currentChar);
                 if (charIndex < 0) {
-                    decodingText[i] = currentChar;
+                    decodingText[j] = currentChar;
+                    System.out.println("Символ " + decodingText[j] + " не найден в алфавите и не будет взломан.");
                 }
                 else {
-                    decodingText[i] = alphabet[(charIndex - shift + alphabet.length) % alphabet.length];
-                    String result = new String(decodingText);
-                    if (result.equalsIgnoreCase(cleanList)) {
-                        GetResultText.getResultText(result);
+                    decodingText[j] = alphabet[(charIndex - i + alphabet.length) % alphabet.length];
                 }
             }
-            }
+            result = new String(decodingText);
+            try {
+                Files.writeString(path, result + "\n", StandardOpenOption.APPEND);
+            } catch (IOException e) {
+                throw new RuntimeException(Constans.ERROR_WRITING_FILE);
         }
+    }
+        System.out.println(Constans.RESULT);
+}
+
+    public Path getPathOfWriteResult() {
+        System.out.println(Constans.ASKING_FILE);
+        Scanner scanner = new Scanner(System.in);
+        Path pathOfWrite = Path.of(scanner.nextLine());
+        if (Files.notExists(pathOfWrite)) {
+            throw new RuntimeException(Constans.ERROR_FILE);
+        }
+        return pathOfWrite;
     }
 }

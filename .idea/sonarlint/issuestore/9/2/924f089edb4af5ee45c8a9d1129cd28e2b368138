@@ -1,11 +1,5 @@
 
 7
-java:S1220""Move this file to a named package.8Ä¨ÈÓÏ1
-=
-java:S2129	" Remove this "String" constructor(ÛÌ‘æ8Ê¨ÈÓÏ1
-B
-java:S2129
-" Remove this "String" constructor(é–‡Øüÿÿÿÿ8Ë¨ÈÓÏ1
-G	java:S106"+Replace this use of System.out by a logger.(î”–Œ8Í¨ÈÓÏ1
-X	java:S125$"<This block of commented-out lines of code should be removed.(ª¼êî8Î¨ÈÓÏ1
-L	java:S106)"+Replace this use of System.out by a logger.(¢ØÒåúÿÿÿÿ8Î¨ÈÓÏ1
+java:S1220""Move this file to a named package.8ÀÓÍïî1
+G	java:S106"+Replace this use of System.out by a logger.(¶êŠá8ÍÓÍïî1
+G	java:S106"+Replace this use of System.err by a logger.(ˆœ£˜8ÒÓÍïî1

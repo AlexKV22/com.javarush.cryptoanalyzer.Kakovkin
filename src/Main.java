@@ -2,45 +2,31 @@
 import decoding.Decoding;
 import encryption.Encryption;
 import hackCaesarCipher.HackCaesarCipher;
+import constants.Constans;
 
 import java.util.Scanner;
 
 public class Main {
-    private static final String START_PROGRAM = new String("Выберите цифру функции программы:\n 1 - Шифрование.\n 2 - Дешифрование. \n 3 - Взлом с помощью Brute Force.");
-    private static final String ERROR_MESSAGE = new String("Ошибка. Введите корректное число");
-
     public static void main(String[] args)  {
+
         Scanner console = new Scanner(System.in);
+        System.out.println(Constans.START_PROGRAM);
+        switch (console.nextInt()) {
+            case 1 : { new Encryption().encryption();
+                       console.close();
+                       break;
+            }
 
-        // Начало программы и проверка на ввод числа
+            case 2 : { new Decoding().decoding();
+                       console.close();
+                       break;
+            }
 
-        System.out.println(START_PROGRAM);
-        int numberChoice = console.nextInt();
-
-        if (numberChoice == 1) {
-            //Вызываем  метод шифрования
-            Encryption encryption = new Encryption();
-            encryption.encryption();
+            case 3 : { new HackCaesarCipher().hackCaesarCipher();
+                       console.close();
+                       break;
+            }
+            default: System.err.println(Constans.ERROR_MESSAGE);
         }
-
-        else if (numberChoice == 2) {
-            //Вызываем метод дешифрования
-            Decoding decoding = new Decoding();
-            decoding.decoding();
-        }
-
-        else if (numberChoice == 3) {
-            //Вызываем метод взлома с помощью БрутФорс
-            HackCaesarCipher hackCaesarCipher = new HackCaesarCipher();
-            hackCaesarCipher.hackcaesarCipher();
-//            HackBruteForce hackBruteForce = new HackBruteForce();
-//            hackBruteForce.hackBruteForce();
-        }
-
-        else {
-            System.out.println(ERROR_MESSAGE);
-        }
-        Main.main(args);
     }
-
 }
