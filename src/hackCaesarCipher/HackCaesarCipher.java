@@ -1,11 +1,10 @@
 package hackCaesarCipher;
-import constants.Constans;
+import constants.Constants;
 import interfaces.ReadableInterface;
 import interfaces.WriteableInterface;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
@@ -41,18 +40,18 @@ public class HackCaesarCipher implements interfaces.Alphabet, ReadableInterface,
             try {
                 Files.writeString(path, result + "\n", StandardOpenOption.APPEND);
             } catch (IOException e) {
-                throw new RuntimeException(Constans.ERROR_WRITING_FILE);
+                throw new RuntimeException(Constants.ERROR_WRITING_FILE);
         }
     }
-        System.out.println(Constans.RESULT);
+        System.out.println(Constants.RESULT);
 }
 
     public Path getPathOfWriteResult() {
-        System.out.println(Constans.ASKING_FILE);
+        System.out.println(Constants.ASKING_FILE);
         Scanner scanner = new Scanner(System.in);
         Path pathOfWrite = Path.of(scanner.nextLine());
         if (Files.notExists(pathOfWrite)) {
-            throw new RuntimeException(Constans.ERROR_FILE);
+            throw new RuntimeException(Constants.ERROR_FILE);
         }
         return pathOfWrite;
     }

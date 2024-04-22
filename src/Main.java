@@ -2,7 +2,7 @@
 import decoding.Decoding;
 import encryption.Encryption;
 import hackCaesarCipher.HackCaesarCipher;
-import constants.Constans;
+import constants.Constants;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args)  {
 
         Scanner console = new Scanner(System.in);
-        System.out.println(Constans.START_PROGRAM);
+        System.out.println(Constants.START_PROGRAM);
         switch (console.nextInt()) {
             case 1 : { new Encryption().encryption();
                        console.close();
@@ -26,7 +26,7 @@ public class Main {
                        console.close();
                        break;
             }
-            default: System.err.println(Constans.ERROR_MESSAGE);
+            default: System.err.println(Constants.ERROR_MESSAGE);
         }
     }
 }

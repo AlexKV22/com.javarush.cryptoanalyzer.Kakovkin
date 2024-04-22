@@ -1,6 +1,6 @@
 package interfaces;
 
-import constants.Constans;
+import constants.Constants;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,10 +11,10 @@ import java.util.Scanner;
 public interface ReadableInterface {
      default String getText() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println(Constans.ASKING_READ_FILE);
+        System.out.println(Constants.ASKING_READ_FILE);
         Path path = Path.of(scanner.nextLine());
             if (Files.notExists(path)) {
-                throw new RuntimeException(Constans.ERROR_FILE);
+                throw new RuntimeException(Constants.ERROR_FILE);
             }
         String finalText;
         try {
